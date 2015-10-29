@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <template id="custom_snippet_products" inherit_id="website.snippets">
+            <xpath expr="//div[@id='snippet_structure']" position="inside">
+          
+
+                <div>
+                    <!-- Thumbnail -->
+                    <div class="oe_snippet_thumbnail">
+                        <img class="oe_snippet_thumbnail_img" src="/website_cycle/static/src/css/img/thumbnail.png" />
+                        <span class="oe_snippet_thumbnail_title">Cycle</span>
+                    </div>
+
+                    <!-- Snippet Body -->
+                    <section class="oe_snippet_body csc" style="height:305px;" data-timeout="2s" data-effect="fade">
+                        <div class="row">
+                            <div class="col-md-12" data-snippet-id="colmd">
+                                <div class="product-slides">
+                                    
+                                    
+                                    
+                                </div>
+                                <div class="product-left"></div>
+                                <div class="product-right"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+          
+            </xpath>
+        </template>
+
+    </data>
+</openerp>

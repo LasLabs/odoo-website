@@ -12,6 +12,7 @@
                   id="product_public_category_form_view">
             <xpath expr="//field[@name='sequence']" position="after">
                 <field name="is_featured"/>
+                <field name="image" widget="image"/>
             </xpath>
         </template>
     </data>

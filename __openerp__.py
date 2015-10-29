@@ -29,6 +29,9 @@
         'website_sale',
     ],
     'data': [
+        'product_product_view.xml',
+        'product_public_category_view.xml',
+        'website_sale_snippet.xml',
     ],
     'installable': True,
     'application': False,
