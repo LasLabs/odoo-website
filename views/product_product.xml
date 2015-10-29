@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        <template inherit_id="website_sale.product_template_form_view"
+                  id="product_template_only_form_view">
+            <xpath expr="//field[@name='website_sequence']" position="after">
+                <field name="is_featured"/>
+            </xpath>
+        </template>
+    </data>
+</openerp>
