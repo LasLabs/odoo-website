@@ -4,7 +4,9 @@
 
 {
     "name": "Website Snippet - Data Slider",
-    "summary": "Abstract data slider for use on website. Primary use is product slider.",
+    "summary":
+        "Abstract data slider for use on website."
+        "  Primary use (and default implementation) is product slider.",
     "version": "9.0.1.0.0",
     "category": "Website",
     "website": "https://laslabs.com/",
