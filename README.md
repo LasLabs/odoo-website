@@ -15,7 +15,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-
+[website_snippet_data_slider](website_snippet_data_slider) | 9.0.1.0.0 | Adds a slider for abstract datasets
 
 Unported addons
 ---------------
