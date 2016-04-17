@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    © 2016-TODAY LasLabs Inc.
+    @license AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <template id="assets_slick" name="website_snippet_data_slider Assets" inherit_id="website.assets_frontend">
+        <xpath expr="//script[last()]" position="after">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" type="text/css" />
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" type="text/css" />
+            <link href="/website_snippet_data_slider/static/src/css/data_slider.css" rel="stylesheet" type="text/css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js" />
+            <script src="/website_snippet_data_slider/static/src/js/data_slider.js" />
+            <script src="/website_snippet_data_slider/static/src/js/data_slider.editor.js" />
+        </xpath>
+    </template>
+</odoo>
