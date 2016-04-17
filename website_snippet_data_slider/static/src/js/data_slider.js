@@ -138,7 +138,7 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
     
     get_records_by_domain: function(model, domain, limit, fields, callback) {
       new Model(model)
-        .call('search_read', [domain, fields, limit])
+        .call('search_read', [domain, fields])
         .then(callback);
     }
     

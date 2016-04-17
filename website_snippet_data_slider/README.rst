@@ -51,6 +51,7 @@ Known Issues / Road Map
 * Find a way to use slug, instead of URI Prefix
 * Touch up the stylesheets
 * Add a real thumbnail, instead of icon
+* Data limit vars are all hooked up, but removed from `search_read` because lower res cnt than limit fails query
 
 Credits
 =======
