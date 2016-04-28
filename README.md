@@ -1,6 +1,6 @@
 [![Travis Build Status](https://travis-ci.org/laslabs/odoo-website.svg?branch=release%2F9.0)](https://travis-ci.org/laslabs/odoo-website)
 
-[![Coverage Status](https://coveralls.io/repos/laslabs/odoo-website/badge.png?branch=release%2F9.0)](https://coveralls.io/r/LasLabs/odoo-website)
+[![Coverage Status](https://coveralls.io/repos/laslabs/odoo-website/badge.png?branch=release%2F9.0)](https://coveralls.io/r/laslabs/odoo-website)
 
 ----
 

@@ -24,7 +24,7 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
     autoplaySpeed: 3000,
     centerMode: true,
     data_model: 'product.template',
-    data_domain: [],
+    data_domain: [['website_published', '=', true]],
     data_image_field: 'image_medium',
     data_name_field: 'display_name',
     data_title: 'Featured Products',
