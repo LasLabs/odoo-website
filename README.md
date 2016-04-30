@@ -1,6 +1,6 @@
 [![Travis Build Status](https://travis-ci.org/laslabs/odoo-website.svg?branch=release%2F9.0)](https://travis-ci.org/laslabs/odoo-website)
 
-[![Coverage Status](https://coveralls.io/repos/laslabs/odoo-website/badge.png?branch=release%2F9.0)](https://coveralls.io/r/LasLabs/odoo-website)
+[![Coverage Status](https://coveralls.io/repos/laslabs/odoo-website/badge.png?branch=release%2F9.0)](https://coveralls.io/r/laslabs/odoo-website)
 
 ----
 
@@ -23,6 +23,7 @@ addon | version | summary
 --- | --- | ---
 [website_sale_cart_dropdown](website_sale_cart_dropdown/) | 9.0.1.0.0 | Add a drop down cart to the header
 [website_sale_featured](website_sale_featured/) | 9.0.1.0.0 | Add featured products to website sales
+[website_snippet_data_slider](website_snippet_data_slider) | 9.0.1.0.1 | Add a data carousel snippet for website editor
 
 [//]: # (end addons)
 

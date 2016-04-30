@@ -24,7 +24,7 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
     autoplaySpeed: 3000,
     centerMode: true,
     data_model: 'product.template',
-    data_domain: [],
+    data_domain: [['website_published', '=', true]],
     data_image_field: 'image_medium',
     data_name_field: 'display_name',
     data_title: 'Featured Products',
@@ -116,8 +116,8 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
       var fields = [nameField, 'id'];
       this.$target.prepend($('<div class="row"><' + titleTag + ' class="' + titleClass + '">' + titleStr + '</' + titleTag + '></div>' ));
       
-      self.get_records_by_domain(model, domain, dataLimit, fields, function(recs){
-        _.each(recs, function(rec){
+      self.get_records_by_domain(model, domain, dataLimit, fields, function(res){
+        _.each(JSON.parse(res), function(rec){
           var $img = $('<img></img>');
           var $div = $('<div class="thumbnail"></div>');
           var $href = $('<a href="' + uriPrefix + rec.id + '"></a>');
@@ -137,9 +137,17 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
     },
     
     get_records_by_domain: function(model, domain, limit, fields, callback) {
-      new Model(model)
-        .call('search_read', [domain, fields])
-        .then(callback);
+      // Explicitly encode the data structures to preserve during transfer 
+      $.ajax({
+        url: '/website/data_slider/' + model,
+        method: 'GET',
+        data: {
+          domain: JSON.stringify(domain),
+          fields: JSON.stringify(fields),
+          limit: limit,
+        },
+        success: callback,
+      })
     }
     
   });
