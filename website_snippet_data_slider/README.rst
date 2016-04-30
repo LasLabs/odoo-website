@@ -24,7 +24,7 @@ To use this module, you need to:
 Note that the snippet defaults to the `product.template` model, as most common
 usage for this widget is likely a product carousel.
 
-Odoo snippet settings Javascript king of got in the way when it came to allowing
+Odoo snippet settings Javascript somewhat of got in the way when it came to allowing
 easy choice of the data, aside from the simple options that were provided in the UI.
 
 In order to further customize your snippet, go into HTML view and edit the
