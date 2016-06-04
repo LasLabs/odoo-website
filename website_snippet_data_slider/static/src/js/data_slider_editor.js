@@ -20,12 +20,12 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
       
       this.$overlay.find(".oe_handle:not(.size), .oe_handle.size .size")
         .on('mouseup', function (event){
-          var size = self.set_size();
+          self.set_size();
           event.preventDefault();
         });
       
       this.$overlay.find(".oe_handle.size .auto_size")
-        .on('click', function (event){
+        .on('click', function (){
           self.set_size();
         });
       
@@ -36,7 +36,7 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
     set_size: function() {
       var size = this.get_size();
       var $slickEl = this.$target.find('.o_slick_container');
-      this.$target.height(size.height)
+      this.$target.height(size.height);
       $slickEl.css({
           'position' : 'relative',
           //'left': ((size.width - $slickEl.width()) / 2),
@@ -46,7 +46,7 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
     
     get_size: function() {
       var $handles = this.$overlay.find('.oe_handles');
-      var $n = $handles.find('.n')
+      var $n = $handles.find('.n');
       var $s = $handles.find('.s');
       var $e = $handles.find('.e');
       var $w = $handles.find('.w');
@@ -57,13 +57,12 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
         $s: $s,
         $e: $e,
         $w: $w,
-      }
+      };
     },
     
     settings_callback: function(event, data){
       
       data = JSON.parse(data);
-      console.log(event);
       
       switch (event) {
         case 'over':
@@ -86,12 +85,13 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
       var self = this;
       var destroy = false;
       
+      var originalOptions = {};
+      
       try {
         // .data giving unpredictable results
-        var originalOptions = this.$target.attr('data-options');
-        originalOptions = JSON.parse(originalOptions);
+        originalOptions = JSON.parse(this.$target.attr('data-options'));
       } catch(e) {
-        var originalOptions = {};
+        
       }
       this.options = _.defaults(originalOptions, this.defaults);
       if (addData) {
@@ -100,7 +100,7 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
           if (val != originalOptions[key]) {
             if (key.startsWith('data_')) {
               if (eventName == 'click') {
-                var deferredUserData= $.Deferred();
+                // var deferredUserData = $.Deferred();
                 var userData = prompt('Enter value for ' + key, self.options[key]);
                 if (!userData) {
                     return;
@@ -119,8 +119,6 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
         });
       }
       if (this.options != options) {
-        console.log('Saving to el data');
-        console.log(this.options);
         this.optionsBackup = this.options;
         this.$target.attr('data-options', JSON.stringify(this.options));
         //if (destroy) {
@@ -136,6 +134,6 @@ odoo.define('website_snippet_data_slider.snippet_editor', function(require){
       this.do_options(resetData);
     },
 
-  })
+  });
   
 });

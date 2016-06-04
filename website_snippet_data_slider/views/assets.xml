@@ -8,16 +8,15 @@
 <odoo>
     <template id="assets_slick" name="website_snippet_data_slider Assets" inherit_id="website.assets_frontend">
         <xpath expr="//script[last()]" position="after">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css" rel="stylesheet" type="text/css" />
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css" rel="stylesheet" type="text/css" />
+            <link href="/website_snippet_data_slider/static/lib/slick-carousel/1.6.0/slick.css" rel="stylesheet" type="text/css" />
+            <link href="/website_snippet_data_slider/static/lib/slick-carousel/1.6.0/slick-theme.css" rel="stylesheet" type="text/css" />
             <link href="/website_snippet_data_slider/static/src/css/data_slider.css" rel="stylesheet" type="text/css" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js" />
             <script src="/website_snippet_data_slider/static/src/js/data_slider.js" />
         </xpath>
     </template>
     <template id="assets_slick_editor" name="website_snippet_data_slider Editor Assets" inherit_id="website.assets_editor">
         <xpath expr="//script[last()]" position="after">
-            <script src="/website_snippet_data_slider/static/src/js/data_slider.editor.js" />
+            <script src="/website_snippet_data_slider/static/src/js/data_slider_editor.js" />
         </xpath>
     </template>
 </odoo>

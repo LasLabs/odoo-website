@@ -5,10 +5,9 @@
 odoo.define('website_snippet_data_slider.data_slider', function(require){
   "use strict";
   
-  var core = require('web.core');
-  var _t = core._t;
+  // var core = require('web.core');
+  // var _t = core._t;
   var animation = require('web_editor.snippets.animation');
-  var Model = require('web.Model');
   
   var defaults = {
     lazyLoad: 'ondemand',
@@ -70,66 +69,70 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
     start: function() {
       
       var self = this;
-      var $dataNode = $(this.$target.find('rec'));
-      var widgetOptions = this.$target.data('options');
-      self.$slick = $('<div class="o_slick_container oe_structure"></div>');
-      this.$target.html(self.$slick);
-      
-      if (!widgetOptions) {
-        widgetOptions = defaults;
-        this.$target.attr('data-options', JSON.stringify(widgetOptions));
-      }
-      
-      self.$slick.slick(widgetOptions);
-      
-      self.$slick.on('set-option', function(event, key, val) {
-        switch (val) {
-            case 'true':
-              val = true;
-              break;
-            case 'false':
-              val = false;
-              break;
-            case undefined:
-              return;
+      $.getScript('/website_snippet_data_slider/static/lib/slick-carousel/1.6.0/slick.min.js', function(){
+        
+        // var $dataNode = $(self.$target.find('rec'));
+        var widgetOptions = self.$target.data('options');
+        self.$slick = $('<div class="o_slick_container oe_structure"></div>');
+        self.$target.html(self.$slick);
+        
+        if (!widgetOptions) {
+          widgetOptions = defaults;
+          self.$target.attr('data-options', JSON.stringify(widgetOptions));
         }
-        if (typeof val === 'object') {
-          return;
-        }
-        self.$slick.slick('slickSetOption', key, val, true);
-      });
-      
-      self.$slick.on('destroy', function(event) {
-        self.start();
-      });
-      
-      var model = widgetOptions.data_model;
-      var domain = widgetOptions.data_domain;
-      var imageField = widgetOptions.data_image_field;
-      var dataLimit = widgetOptions.data_limit;
-      var nameField = widgetOptions.data_name_field;
-      var titleTag = widgetOptions.data_title_tag;
-      var titleStr = widgetOptions.data_title;
-      var titleClass = widgetOptions.data_title_class;
-      var uriPrefix = widgetOptions.data_uri_prefix;
-      var baseUri = '/web/image/' + model;
-      var fields = [nameField, 'id'];
-      this.$target.prepend($('<div class="row"><' + titleTag + ' class="' + titleClass + '">' + titleStr + '</' + titleTag + '></div>' ));
-      
-      self.get_records_by_domain(model, domain, dataLimit, fields, function(res){
-        _.each(JSON.parse(res), function(rec){
-          var $img = $('<img></img>');
-          var $div = $('<div class="thumbnail"></div>');
-          var $href = $('<a href="' + uriPrefix + rec.id + '"></a>');
-          var $caption = $('<div class="caption"><h5>' + rec[fields[0]] + '</h5></div>');
-          $div.append($href);
-          var imgUri = baseUri + '/' + rec.id + '/' + imageField;
-          $img.attr('data-lazy', imgUri);
-          $href.append($img).append($caption);
-          self.$slick.append($div);
-          self.$slick.slick('slickAdd', $div);
-          self.$slick.slick('slickGoTo', 0);
-        });  
+        
+        self.$slick.slick(widgetOptions);
+        
+        self.$slick.on('set-option', function(event, key, val) {
+          switch (val) {
+              case 'true':
+                val = true;
+                break;
+              case 'false':
+                val = false;
+                break;
+              case undefined:
+                return;
+          }
+          if (typeof val === 'object') {
+            return;
+          }
+          self.$slick.slick('slickSetOption', key, val, true);
+        });
+        
+        self.$slick.on('destroy', function() {
+          self.start();
+        });
+        
+        var model = widgetOptions.data_model;
+        var domain = widgetOptions.data_domain;
+        var imageField = widgetOptions.data_image_field;
+        var dataLimit = widgetOptions.data_limit;
+        var nameField = widgetOptions.data_name_field;
+        var titleTag = widgetOptions.data_title_tag;
+        var titleStr = widgetOptions.data_title;
+        var titleClass = widgetOptions.data_title_class;
+        var uriPrefix = widgetOptions.data_uri_prefix;
+        var baseUri = '/web/image/' + model;
+        var fields = [nameField, 'id'];
+        self.$target.prepend($('<div class="row"><' + titleTag + ' class="' + titleClass + '">' + titleStr + '</' + titleTag + '></div>' ));
+        
+        self.get_records_by_domain(model, domain, dataLimit, fields, function(res){
+          _.each(JSON.parse(res), function(rec){
+            var $img = $('<img></img>');
+            var $div = $('<div class="thumbnail"></div>');
+            var $href = $('<a href="' + uriPrefix + rec.id + '"></a>');
+            var $caption = $('<div class="caption"><h5>' + rec[fields[0]] + '</h5></div>');
+            $div.append($href);
+            var imgUri = baseUri + '/' + rec.id + '/' + imageField;
+            $img.attr('data-lazy', imgUri);
+            $href.append($img).append($caption);
+            self.$slick.append($div);
+            self.$slick.slick('slickAdd', $div);
+            self.$slick.slick('slickGoTo', 0);
+          });  
+        });
+        
       });
       
       return this._super();
@@ -147,11 +150,13 @@ odoo.define('website_snippet_data_slider.data_slider', function(require){
           limit: limit,
         },
         success: callback,
-      })
+      });
     }
     
   });
   
-  return {defaults: defaults};
+  return {defaults: defaults,
+          data_slider: animation.registry.data_slider,
+          };
   
 });

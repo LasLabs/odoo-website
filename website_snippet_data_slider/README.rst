@@ -15,6 +15,7 @@ Usage
 To use this module, you need to:
 
 * Install `website_snippet_data_slider` module
+* Install `website_sale` module if you are planning on using this as a product carousel
 * Drop `Data Slider` building block anywhere on your site
 * Edit the configuration options to your liking
 * Save
@@ -51,6 +52,7 @@ Known Issues / Road Map
 * Find a way to use slug, instead of URI Prefix
 * Touch up the stylesheets
 * Add a real thumbnail, instead of icon
+* Progressive lazy load is slow
 
 Credits
 =======
