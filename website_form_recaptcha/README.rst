@@ -8,6 +8,8 @@ Website Form - ReCaptcha
 
 Adds a ReCaptcha field widget for website forms
 
+This module has been moved to https://github.com/OCA/website
+
 
 Configuration
 =============

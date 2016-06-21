@@ -8,6 +8,8 @@ Website CRM - ReCaptcha
 
 Adds a Recaptcha validation to Contact form on Website
 
+This module has been moved to https://github.com/OCA/website
+
 
 Configuration
 =============
