@@ -41,6 +41,8 @@ Following are the setings that do not have configuration in the UI:
 * `data_title_tag` - HTML element type to use for title element (such as `h1`)
 * `data_title_class` - Class to use for the title element
 * `data_uri_prefix` - Path prefix for link. Record id will be added to it in context.
+* `data_container_width` - Width of the outer container, default 90%
+* `prevArrow` & `nextArrow` - HTML or jQuery selector of slider arrows
 
 Known Issues / Road Map
 ======================

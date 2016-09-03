@@ -3,6 +3,14 @@
  * @license AGPL-3
  **/
 
-.slick-arrow{
-    background-color: #4c4c4c !important;
+.slider-arrow-left {
+    position: absolute;
+    top: 40%;
+    left: -40px;
+}
+
+.slider-arrow-right {
+    position: absolute;
+    top: 40%;
+    right: -40px;
 }
