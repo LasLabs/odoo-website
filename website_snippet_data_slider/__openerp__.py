@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
+# © 2016-TODAY LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -7,7 +7,7 @@
     "summary":
         "Abstract data slider for use on website."
         "  Primary use (and default implementation) is product slider.",
-    "version": "9.0.1.0.1",
+    "version": "9.0.1.1.0",
     "category": "Website",
     "website": "https://laslabs.com/",
     "author": "LasLabs",
